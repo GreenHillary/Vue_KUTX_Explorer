@@ -1,24 +1,26 @@
 <template>
   <b-container fluid class="text-left">
-    <b-row class="shadow">
-    <b-col class="text-center my-3">
-    <h4>Now playing:</h4>
+    <b-row>
+    <b-col class="text-center shadow py-3">
+    <h4 v-if="this.returnedTracklist.onNow.song">Now playing:</h4>
     <p v-if="this.returnedTracklist.onNow.song">{{ this.returnedTracklist.onNow.song.artistName }} - {{ this.returnedTracklist.onNow.song.trackName }}</p>
+      <div class="container"> 
         <audio
          controls
          src="https://kut.streamguys1.com/kutx-free">
              Your browser does not support the
               <code>audio</code> element.
        </audio>
+      </div>
     </b-col>
     </b-row>
-    <b-row class="border-bottom border-top py-1">
-      <b-col>Play Time</b-col>
-      <b-col>Artist</b-col>
-      <b-col>Title</b-col>
+    <b-row class="border-bottom py-3 bg-light">
+      <b-col class="font-weight-bold">Play Time</b-col>
+      <b-col class="font-weight-bold">Artist</b-col>
+      <b-col class="font-weight-bold">Title</b-col>
     </b-row>
 
-    <b-row class="py-3 border border-success" v-if="this.returnedTracklist.onNow.song">
+    <b-row class="py-3 border shadow" v-if="this.returnedTracklist.onNow.song">
       <b-col>{{ this.returnedTracklist.onNow.song._start_time }}</b-col>
       <b-col>{{ this.returnedTracklist.onNow.song.artistName }}</b-col>
       <b-col>{{ this.returnedTracklist.onNow.song.trackName }}</b-col>

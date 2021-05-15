@@ -1,7 +1,7 @@
 <template>
   <div>
   <b-navbar toggleable="lg" type="dark" variant="info">
-    <b-navbar-brand href="#">KUTX</b-navbar-brand>
+    <b-navbar-brand href="https://www.kutx.org" target="_blank" rel="noopener noreferrer">KUTX</b-navbar-brand>
 
   </b-navbar>
 </div>
