@@ -1,24 +1,28 @@
 <template>
   <b-container fluid class="text-left">
-    <b-row class="border-bottom shadow py-1">
+    <b-row>
+    <b-col class="text-center my-3">
+    <h4>Now playing:</h4>
+    <p>{{ this.returnedTracklist.onNow.song.artistName }} - {{ this.returnedTracklist.onNow.song.trackName }}</p>
+        <audio
+         controls
+         src="https://kut.streamguys1.com/kutx-free">
+             Your browser does not support the
+              <code>audio</code> element.
+       </audio>
+    </b-col>
+    </b-row>
+    <b-row class="border-bottom border-top shadow py-1">
       <b-col>Play Time</b-col>
       <b-col>Artist</b-col>
       <b-col>Title</b-col>
-      <b-col>Connections</b-col>
-      <b-col>Releases</b-col>
     </b-row>
 
     <b-row class="py-3 border border-success" v-if="this.returnedTracklist.onNow.song">
       <b-col>{{ this.returnedTracklist.onNow.song._start_time }}</b-col>
       <b-col>{{ this.returnedTracklist.onNow.song.artistName }}</b-col>
       <b-col>{{ this.returnedTracklist.onNow.song.trackName }}</b-col>
-      <b-col
-        ><a href=""
-          ><img class="img-fluid" src="./../assets/whosampled.png" /></a
-      ></b-col>
-      <b-col
-        ><a href=""><img class="img-fluid" src="./../assets/discogs.png" /></a
-      ></b-col>
+
     </b-row>
 
     <b-row
@@ -26,13 +30,7 @@
       <b-col>{{ result.song._start_time }}</b-col>
       <b-col>{{ result.song.artistName }}</b-col>
       <b-col>{{ result.song.trackName }}</b-col>
-      <b-col
-        ><a href=""
-          ><img class="img-fluid" src="./../assets/whosampled.png" /></a
-      ></b-col>
-      <b-col
-        ><a href=""><img class="img-fluid" src="./../assets/discogs.png" /></a
-      ></b-col>
+
     </b-row>
   </b-container>
 </template>
