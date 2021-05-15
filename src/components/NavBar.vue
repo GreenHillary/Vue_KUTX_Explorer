@@ -14,17 +14,6 @@
           <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
         </b-nav-form> -->
 
-        <b-nav-item-dropdown right>
-          <!-- Using 'button-content' slot -->
-          <template #button-content>
-            Links
-          </template>
-          <b-dropdown-item href="#">KUTX</b-dropdown-item>
-          <b-dropdown-item href="#">Discogs</b-dropdown-item>
-          <b-dropdown-item href="#">WhoSampled</b-dropdown-item>
-          <b-dropdown-item href="#">Spotify</b-dropdown-item>
-          <b-dropdown-item href="#">YouTube</b-dropdown-item>
-        </b-nav-item-dropdown>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
