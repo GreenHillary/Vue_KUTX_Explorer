@@ -1,9 +1,9 @@
 <template>
   <b-container fluid class="text-left">
-    <b-row>
+    <b-row class="shadow">
     <b-col class="text-center my-3">
     <h4>Now playing:</h4>
-    <p>{{ this.returnedTracklist.onNow.song.artistName }} - {{ this.returnedTracklist.onNow.song.trackName }}</p>
+    <p v-if="this.returnedTracklist.onNow.song">{{ this.returnedTracklist.onNow.song.artistName }} - {{ this.returnedTracklist.onNow.song.trackName }}</p>
         <audio
          controls
          src="https://kut.streamguys1.com/kutx-free">
@@ -12,7 +12,7 @@
        </audio>
     </b-col>
     </b-row>
-    <b-row class="border-bottom border-top shadow py-1">
+    <b-row class="border-bottom border-top py-1">
       <b-col>Play Time</b-col>
       <b-col>Artist</b-col>
       <b-col>Title</b-col>
