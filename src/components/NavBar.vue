@@ -3,19 +3,15 @@
   <b-navbar toggleable="lg" type="dark" variant="info">
     <b-navbar-brand href="#">KUTX</b-navbar-brand>
 
-    <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+  <div class="container">
+    <audio
+        controls
+        src="https://kut.streamguys1.com/kutx-free">
+            Your browser does not support the
+            <code>audio</code> element.
+    </audio>
+  </div>
 
-    <b-collapse id="nav-collapse" is-nav>
-
-      <!-- Right aligned nav items -->
-      <b-navbar-nav class="ml-auto">
-        <!-- <b-nav-form>
-          <b-form-input size="sm" class="mr-sm-2" placeholder="Search"></b-form-input>
-          <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
-        </b-nav-form> -->
-
-      </b-navbar-nav>
-    </b-collapse>
   </b-navbar>
 </div>
 </template>
