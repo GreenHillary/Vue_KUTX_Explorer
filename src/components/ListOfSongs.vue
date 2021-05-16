@@ -4,14 +4,12 @@
     <b-col class="text-center shadow py-3">
     <h4 v-if="this.returnedTracklist.onNow.song">Now playing:</h4>
     <p v-if="this.returnedTracklist.onNow.song">{{ this.returnedTracklist.onNow.song.artistName }} - {{ this.returnedTracklist.onNow.song.trackName }}</p>
-      <div class="container"> 
         <audio
          controls
          src="https://kut.streamguys1.com/kutx-free">
              Your browser does not support the
               <code>audio</code> element.
        </audio>
-      </div>
     </b-col>
     </b-row>
     <b-row class="border-bottom py-3 bg-light">
@@ -64,6 +62,7 @@ export default {
 },
 mounted: function(){
   this.getTracks();
+  this.updateTracks();
 },
 methods: {
   getTracks:function(){
@@ -82,6 +81,11 @@ methods: {
         this.errorMessage = error;
         console.error("There was an error!", error);
       });
+    },
+    updateTracks: function (){
+      window.setInterval(()=>{
+        this.getTracks();
+      }, 15000);
     }
   }
 };
