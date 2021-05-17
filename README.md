@@ -1,4 +1,12 @@
 # vue_kutx_playlist_explorer
+```
+A simple, mobile friendly way to stream the Austin radio station KUTX and review their playlist details in real time.
+```
+
+### Built With:
+```
+This site was built using [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/) 
+```
 
 ## Project setup
 ```
