@@ -5,12 +5,12 @@ A simple, mobile friendly way to stream the Austin radio station KUTX and review
 
 ### Built With:
 ```
-This site was built using [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/) 
+This site was built using 
 ```
+[Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
 
-[![kutx.netlify.app up?](https://img.shields.io/website?down_color=red&down_message=down&label=kutx.netlify.app&up_color=green&up_message=up&url=https%3A%2F%2Fkutx.netlify.app)](https://kutx.netlify.app)
+### Project setup
 
-## Project setup
 ```
 npm install
 ```
