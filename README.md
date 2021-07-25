@@ -13,6 +13,7 @@ A mobile friendly web app built on the JAMstack, designed to stream Austin's KUT
 ***
 
 ### Project setup
+
 ```
 npm install
 ```
