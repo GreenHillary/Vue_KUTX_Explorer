@@ -5,6 +5,7 @@
     <h4 v-if="this.returnedTracklist.onNow.song">Now playing:</h4>
     <p v-if="this.returnedTracklist.onNow.song">{{ this.returnedTracklist.onNow.song.artistName }} - {{ this.returnedTracklist.onNow.song.trackName }}</p>
         <audio
+         id="stream"
          controls
          src="https://kut.streamguys1.com/kutx-free">
              Your browser does not support the
@@ -21,7 +22,7 @@
     <b-row class="py-3 border shadow" v-if="this.returnedTracklist.onNow.song">
       <b-col>{{ this.returnedTracklist.onNow.song._start_time }}</b-col>
       <b-col>{{ this.returnedTracklist.onNow.song.artistName }}</b-col>
-      <b-col>{{ this.returnedTracklist.onNow.song.trackName }}</b-col>
+      <b-col><a :href="'https://www.youtube.com/results?search_query=' + this.returnedTracklist.onNow.song.artistName + ' ' + this.returnedTracklist.onNow.song.trackName " target="_blank">{{ this.returnedTracklist.onNow.song.trackName }}</a></b-col>
 
     </b-row>
 
@@ -29,7 +30,7 @@
       v-for="(result, idx) in returnedTracklist.tracklist.results" :key="idx" class="py-3 border">
       <b-col>{{ result.song._start_time }}</b-col>
       <b-col>{{ result.song.artistName }}</b-col>
-      <b-col>{{ result.song.trackName }}</b-col>
+      <b-col><a :href="'https://www.youtube.com/results?search_query=' + result.song.artistName + ' ' + result.song.trackName " target="_blank">{{ result.song.trackName }}</a></b-col>
 
     </b-row>
   </b-container>
@@ -65,6 +66,11 @@ mounted: function(){
   this.updateTracks();
 },
 methods: {
+  getAudioElement:function(){
+    let audioElement = Document.getElementById('stream');
+    console.log("audioElement");
+    audioElement.play();
+  },
   getTracks:function(){
     fetch("https://api.composer.nprstations.org/v1/widget/50ef24ebe1c8a1369593d032/tracks?format=json&limit=20")
       .then(async response => {
