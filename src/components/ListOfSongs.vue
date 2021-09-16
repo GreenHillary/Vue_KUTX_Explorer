@@ -21,7 +21,7 @@
 
     <b-row class="py-3 border shadow" v-if="this.returnedTracklist.onNow.song">
       <b-col>{{ this.returnedTracklist.onNow.song._start_time }}</b-col>
-      <b-col>{{ this.returnedTracklist.onNow.song.artistName }}</b-col>
+      <b-col><a :href="'https://www.google.com/search?q=' + this.returnedTracklist.onNow.song.artistName" target="_blank">{{ this.returnedTracklist.onNow.song.artistName }}</a></b-col>
       <b-col><a :href="'https://www.youtube.com/results?search_query=' + this.returnedTracklist.onNow.song.artistName + ' ' + this.returnedTracklist.onNow.song.trackName " target="_blank">{{ this.returnedTracklist.onNow.song.trackName }}</a></b-col>
 
     </b-row>
@@ -29,7 +29,7 @@
     <b-row
       v-for="(result, idx) in returnedTracklist.tracklist.results" :key="idx" class="py-3 border">
       <b-col>{{ result.song._start_time }}</b-col>
-      <b-col>{{ result.song.artistName }}</b-col>
+      <b-col><a :href="'https://www.google.com/search?q=' + result.song.artistName " target="_blank">{{ result.song.artistName }}</a></b-col>
       <b-col><a :href="'https://www.youtube.com/results?search_query=' + result.song.artistName + ' ' + result.song.trackName " target="_blank">{{ result.song.trackName }}</a></b-col>
 
     </b-row>
