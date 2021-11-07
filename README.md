@@ -1,6 +1,6 @@
 # vue_kutx_playlist_explorer
 
-kutx.netlify.app
+[kutx.netlify.app](https://kutx.netlify.app)
 
 A mobile friendly web app built on the JAMstack, designed to stream Austin's KUTX radio live while updating the playlist in real time.
 ***
