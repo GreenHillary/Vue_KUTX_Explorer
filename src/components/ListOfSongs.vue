@@ -6,8 +6,10 @@
     <p v-if="this.returnedTracklist.onNow.song">{{ this.returnedTracklist.onNow.song.artistName }} - {{ this.returnedTracklist.onNow.song.trackName }}</p>
         <audio
          id="stream"
+         ref="stream"
          controls
-         src="https://kut.streamguys1.com/kutx-free">
+         autoplay="true"
+        src="https://kut.streamguys1.com/kutx-free">
              Your browser does not support the
               <code>audio</code> element.
        </audio>
@@ -40,6 +42,7 @@
 export default {
   data: function () {
     return {
+      streamUrl: '',
       returnedTracklist: {
         onNow: {
           song: {
@@ -64,13 +67,19 @@ export default {
 mounted: function(){
   this.getTracks();
   this.updateTracks();
+  this.playStream();
 },
 methods: {
-  getAudioElement:function(){
-    let audioElement = Document.getElementById('stream');
-    console.log("audioElement");
-    audioElement.play();
+
+  playStream: function(){
+    let streamUrl= 'https://kut.streamguys1.com/kutx-free?cb=' + new Date().getTime() ;
+    let stream = this.$refs.stream;
+    stream.setAttribute("src", streamUrl);
+    stream.load();
+    // Uncaught (in promise) DOMException: play() failed because the user didn't interact with the document first. https://goo.gl/xX8pDD
+    // stream.play();
   },
+
   getTracks:function(){
     fetch("https://api.composer.nprstations.org/v1/widget/50ef24ebe1c8a1369593d032/tracks?format=json&limit=20")
       .then(async response => {
