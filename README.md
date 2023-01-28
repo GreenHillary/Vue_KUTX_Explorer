@@ -1,4 +1,7 @@
-# vue_kutx_playlist_explorer
+# Vue KUTX Playlist Explorer
+
+[![image](https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D)](https://vuejs.org/) [![image](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com/docs/4.0/getting-started/introduction/) [![image](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://kutx.netlify.app)
+
 
 [kutx.netlify.app](https://kutx.netlify.app)
 
